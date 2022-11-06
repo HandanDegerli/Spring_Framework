@@ -11,7 +11,7 @@ import java.util.Objects;
 @Service
 public class ProgrammingLanguagesManager implements ProgrammingLanguagesService {
 
-    private ProgrammingLanguagesRepository programmingLanguagesRepository;
+    private final ProgrammingLanguagesRepository programmingLanguagesRepository;
 
     public ProgrammingLanguagesManager(ProgrammingLanguagesRepository programmingLanguagesRepository) {
         this.programmingLanguagesRepository = programmingLanguagesRepository;
@@ -20,13 +20,13 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
     @Override
     public void save(ProgrammingLanguages programmingLanguages) throws Exception{
 
-        for(ProgrammingLanguages inMmProgrammingLanguages : programmingLanguagesRepository.getAll()){
-           if(inMmProgrammingLanguages.getName() == programmingLanguages.getName() ){
+        for(ProgrammingLanguages pL : programmingLanguagesRepository.getAll()){
+           if(Objects.equals(pL.getName(), programmingLanguages.getName())){
                throw new Exception("Programming language name can not repeat! Change the name please!");
            }
         }
 
-         if (programmingLanguages.getName()==null) {
+         if (Objects.equals(programmingLanguages.getName(), " ")) {
              throw new Exception("Programming language name can not be null! Give the name please!");
          }
 
@@ -35,10 +35,14 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
 
     @Override
     public void update(int index, ProgrammingLanguages programmingLanguages) throws Exception {
-        for(ProgrammingLanguages inMmProgrammingLanguages : programmingLanguagesRepository.getAll()){
-            if(inMmProgrammingLanguages.getName() == programmingLanguages.getName() ){
+        for(ProgrammingLanguages pL : programmingLanguagesRepository.getAll()){
+            if(Objects.equals(pL.getName(), programmingLanguages.getName())){
                 throw new Exception("Programming language name can not repeat! Change the name please!");
             }
+        }
+
+        if (Objects.equals(programmingLanguages.getName(), " ")) {
+            throw new Exception("Programming language name can not be null! Give the name please!");
         }
 
         programmingLanguagesRepository.update(index, programmingLanguages);
@@ -46,8 +50,8 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
     }
 
     @Override
-    public void delete(ProgrammingLanguages programmingLanguages) {
-        programmingLanguagesRepository.delete(programmingLanguages);
+    public void delete(int id) throws Exception {
+        programmingLanguagesRepository.delete(id);
     }
 
     @Override
@@ -56,7 +60,8 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
     }
 
     @Override
-    public ProgrammingLanguages findById(int id) {
+    public ProgrammingLanguages findById(int id) throws Exception{
+
         return programmingLanguagesRepository.findById(id);
     }
 }

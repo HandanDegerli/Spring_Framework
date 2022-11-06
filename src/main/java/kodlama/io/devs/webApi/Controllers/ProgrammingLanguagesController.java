@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/programminglanguages")
 public class ProgrammingLanguagesController {
 
-    private ProgrammingLanguagesService programmingLanguagesService;
+    private final ProgrammingLanguagesService programmingLanguagesService;
 
     @Autowired
     public ProgrammingLanguagesController(ProgrammingLanguagesService programmingLanguagesService) {
@@ -19,18 +19,18 @@ public class ProgrammingLanguagesController {
     }
 
     @PostMapping("/add")
-    public void add() throws Exception {
-        programmingLanguagesService.save(new ProgrammingLanguages(4, "Kotlin"));
+    public void add(int id, String name) throws Exception {
+        programmingLanguagesService.save(new ProgrammingLanguages(id, name));
     }
 
     @PutMapping("/update")
-    public void update() throws Exception{
-        programmingLanguagesService.update(3, new ProgrammingLanguages(10, "Python"));
+    public void update(int index, int id, String name) throws Exception{
+        programmingLanguagesService.update(index, new ProgrammingLanguages(id, name));
     }
 
     @DeleteMapping("/delete")
-    public void delete(){
-        programmingLanguagesService.delete(new ProgrammingLanguages(10, "Python"));
+    public void delete(int id) throws Exception {
+        programmingLanguagesService.delete(id);
     }
 
     @GetMapping("/getall")
@@ -39,7 +39,7 @@ public class ProgrammingLanguagesController {
     }
 
     @GetMapping("/findbyid")
-    public ProgrammingLanguages findById(int id){
+    public ProgrammingLanguages findById(int id) throws Exception {
         return programmingLanguagesService.findById(id);
     }
 }

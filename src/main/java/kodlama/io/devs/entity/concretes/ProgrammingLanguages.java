@@ -2,21 +2,23 @@ package kodlama.io.devs.entity.concretes;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class ProgrammingLanguages {
 
        private int id;
        private String name;
 
-       public ProgrammingLanguages(){
+   /*      public ProgrammingLanguages(){
 
        }
 
-/*    public ProgrammingLanguages(int id, String name) {
+  public ProgrammingLanguages(int id, String name) {
         this.id = id;
         this.name = name;
     }

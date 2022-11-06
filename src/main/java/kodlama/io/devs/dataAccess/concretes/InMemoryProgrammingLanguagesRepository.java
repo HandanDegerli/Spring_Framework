@@ -13,6 +13,7 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
     //CRUD
 
     List<ProgrammingLanguages> prList;
+    ProgrammingLanguages programmingLanguages;
 
     public InMemoryProgrammingLanguagesRepository() {
         prList = new ArrayList<>();
@@ -20,6 +21,10 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
         prList.add(new ProgrammingLanguages(2, "C#"));
         prList.add(new ProgrammingLanguages(3, "Python"));
         prList.add(new ProgrammingLanguages(8, "Golang"));
+    }
+
+    public InMemoryProgrammingLanguagesRepository(ProgrammingLanguages programmingLanguages) {
+        this.programmingLanguages = programmingLanguages;
     }
 
     @Override
@@ -34,9 +39,11 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
     }
 
     @Override
-    public void delete(ProgrammingLanguages programmingLanguages) {
-        prList.remove(programmingLanguages);
+    public void delete(int id) throws Exception{
+        ProgrammingLanguages pL = findById(id);
+        prList.remove(pL);
     }
+
 
     @Override
     public List<ProgrammingLanguages> getAll() {
@@ -44,7 +51,11 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
     }
 
     @Override
-    public ProgrammingLanguages findById(int id) {
-        return prList.get(id);
+    public ProgrammingLanguages findById(int id) throws Exception {
+        for(ProgrammingLanguages pL : prList) {
+            if(pL.getId() == id)
+                return pL;
+        }
+        throw new Exception("Entered id could not find!");
     }
 }
