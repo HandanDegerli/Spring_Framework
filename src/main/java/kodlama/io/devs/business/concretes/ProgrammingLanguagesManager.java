@@ -53,7 +53,6 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
     public void delete(int id) throws Exception {
         programmingLanguagesRepository.delete(id);
     }
-
     @Override
     public List<ProgrammingLanguages> getAll() {
         return programmingLanguagesRepository.getAll();

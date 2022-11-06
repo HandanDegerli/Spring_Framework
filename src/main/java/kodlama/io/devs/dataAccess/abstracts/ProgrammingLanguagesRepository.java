@@ -8,7 +8,6 @@ public interface ProgrammingLanguagesRepository {
     void save(ProgrammingLanguages programmingLanguages);
     void update(int index, ProgrammingLanguages programmingLanguages);
     void delete(int id) throws Exception;
-
     List<ProgrammingLanguages> getAll();
     ProgrammingLanguages findById(int id) throws Exception;
 

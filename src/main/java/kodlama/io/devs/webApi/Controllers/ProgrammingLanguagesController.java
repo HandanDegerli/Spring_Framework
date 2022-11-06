@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/programminglanguages")
 public class ProgrammingLanguagesController {
-
     private final ProgrammingLanguagesService programmingLanguagesService;
 
     @Autowired

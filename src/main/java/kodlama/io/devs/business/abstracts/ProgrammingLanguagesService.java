@@ -9,7 +9,6 @@ public interface ProgrammingLanguagesService{
     void save(ProgrammingLanguages programmingLanguages) throws Exception;
     void update(int index, ProgrammingLanguages programmingLanguages) throws Exception;
     void delete(int id) throws Exception;
-
     List<ProgrammingLanguages> getAll();
     ProgrammingLanguages findById(int id) throws Exception;
 }
