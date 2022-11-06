@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76751cca-5dec-43aa-9509-229f0ece22e1" name="Changes" comment="changes">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Desktop/Kodlama.io.Devs/kodlama.io.devs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kodlama/io/devs/ProgrammingLanguagesApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kodlama/io/devs/ProgrammingLanguagesApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
