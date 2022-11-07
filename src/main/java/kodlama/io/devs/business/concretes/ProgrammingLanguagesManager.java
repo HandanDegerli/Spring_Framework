@@ -45,7 +45,7 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
             throw new Exception("Programming language name can not be null! Give the name please!");
         }
 
-        
+
         programmingLanguagesRepository.update(index, programmingLanguages);
 
     }

@@ -13,7 +13,7 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
     //CRUD
 
     List<ProgrammingLanguages> prList;
-    ProgrammingLanguages programmingLanguages;
+    private ProgrammingLanguages programmingLanguages;
 
     public InMemoryProgrammingLanguagesRepository() {
         prList = new ArrayList<>();
@@ -21,6 +21,8 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
         prList.add(new ProgrammingLanguages(2, "C#"));
         prList.add(new ProgrammingLanguages(3, "Python"));
         prList.add(new ProgrammingLanguages(8, "Golang"));
+        System.out.println("****");
+        System.out.println(prList);
     }
 
     public InMemoryProgrammingLanguagesRepository(ProgrammingLanguages programmingLanguages) {
