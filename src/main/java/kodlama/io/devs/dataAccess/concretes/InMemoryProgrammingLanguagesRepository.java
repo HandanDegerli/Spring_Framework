@@ -13,7 +13,6 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
     //CRUD
 
     List<ProgrammingLanguages> prList;
-    private ProgrammingLanguages programmingLanguages;
 
     public InMemoryProgrammingLanguagesRepository() {
         prList = new ArrayList<>();
@@ -25,15 +24,11 @@ public class InMemoryProgrammingLanguagesRepository implements ProgrammingLangua
         System.out.println(prList);
     }
 
-    public InMemoryProgrammingLanguagesRepository(ProgrammingLanguages programmingLanguages) {
-        this.programmingLanguages = programmingLanguages;
-    }
-
     @Override
     public void save(ProgrammingLanguages programmingLanguages) {
         prList.add(programmingLanguages);
-
     }
+
     @Override
     public void update(int index, ProgrammingLanguages programmingLanguages) {
        prList.set(index, programmingLanguages);

@@ -26,10 +26,6 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
            }
         }
 
-         if (Objects.equals(programmingLanguages.getName(), " ")) {
-             throw new Exception("Programming language name can not be null! Give the name please!");
-         }
-
          programmingLanguagesRepository.save(programmingLanguages);
     }
 
@@ -40,11 +36,6 @@ public class ProgrammingLanguagesManager implements ProgrammingLanguagesService 
                 throw new Exception("Programming language name can not repeat! Change the name please!");
             }
         }
-
-        if (Objects.equals(programmingLanguages.getName(), " ")) {
-            throw new Exception("Programming language name can not be null! Give the name please!");
-        }
-
 
         programmingLanguagesRepository.update(index, programmingLanguages);
 

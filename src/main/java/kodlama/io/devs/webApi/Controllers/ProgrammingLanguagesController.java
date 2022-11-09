@@ -18,13 +18,13 @@ public class ProgrammingLanguagesController {
     }
 
     @PostMapping("/add")
-    public void add(int id, String name) throws Exception {
-        programmingLanguagesService.save(new ProgrammingLanguages(id, name));
+    public void add(ProgrammingLanguages programmingLanguages) throws Exception {
+        programmingLanguagesService.save(programmingLanguages);
     }
 
     @PutMapping("/update")
-    public void update(int index, int id, String name) throws Exception{
-        programmingLanguagesService.update(index, new ProgrammingLanguages(id, name));
+    public void update(int index, ProgrammingLanguages programmingLanguages) throws Exception{
+        programmingLanguagesService.update(index, programmingLanguages);
     }
 
     @DeleteMapping("/delete")
